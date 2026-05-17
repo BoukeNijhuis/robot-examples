@@ -1,4 +1,4 @@
-package org.example;
+package nl.boukenijhuis.robot;
 
 import java.awt.*;
 

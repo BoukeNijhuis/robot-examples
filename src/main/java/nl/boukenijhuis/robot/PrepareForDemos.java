@@ -1,4 +1,4 @@
-package org.example;
+package nl.boukenijhuis.robot;
 
 import static java.awt.event.KeyEvent.*;
 
