@@ -18,20 +18,32 @@ public class RobotHelper {
         // press all keys
         for (int keyEvent : list) {
             robot.keyPress(keyEvent);
+            reliabilityPause();
         }
 
         // release all keys
         for (int keyEvent : list) {
             robot.keyRelease(keyEvent);
+            reliabilityPause();
+        }
+    }
+
+    public void pressKeyMultipleTimes(int keyEvent, int times) {
+        for (int i = 0; i < times; i++) {
+            pressKeys(keyEvent);
         }
     }
 
     public void pressKeys(int... list) {
         for (int keyEvent : list) {
             robot.keyPress(keyEvent);
-            pause(100);
             robot.keyRelease(keyEvent);
         }
+    }
+
+    private void reliabilityPause() {
+        // for reliability (without the OS has troubles keeping up)
+        pause(100);
     }
 
     public void pause(int millis) {
